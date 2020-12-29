@@ -2,6 +2,9 @@
 <Workspace
    version = "1.0">
    <FileRef
+      location = "group:/Users/andrej/Desktop/workshop/UberClone/UberClone/SignUpViewController.swift">
+   </FileRef>
+   <FileRef
       location = "group:UberClone.xcodeproj">
    </FileRef>
    <FileRef
