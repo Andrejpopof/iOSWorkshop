@@ -6,6 +6,10 @@
 //
 
 import UIKit
+import FirebaseAuth
+import FirebaseDatabase
+
+
 
 class SignUpViewController: UIViewController {
     @IBOutlet weak var email: UITextField!
@@ -46,22 +50,22 @@ class SignUpViewController: UIViewController {
             typeWorkerStack.isHidden = false
             typeWorkerSwitchesStack.isHidden = false
         }
-        
-        
     }
     
     @IBAction func mechanicSwitchChanged(_ sender: UISwitch) {
-        
-        if sender.isOn == true{
-            print("asd")
+        if sender.isOn{
+            print("mechanic switch turned ON")
             electricianSwitch.setOn(false, animated: true)
             itWorkerSwitch.setOn(false, animated: true)
+            
+        }else{
+            print("mechanic switch turned off")
         }
-        else{
-            print("dsa")
-        }
-        
     }
+    
+
+    
+  
     
     @IBAction func electricianSwitchChanged(_ sender: UISwitch) {
         if sender.isOn == true{
@@ -82,5 +86,57 @@ class SignUpViewController: UIViewController {
         else{
             print("it worker switch turned OFF")
         }
+    }
+    
+    
+    
+    func displayAlert(title:String, message:String)
+    {
+        let displayAlertController = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        displayAlertController.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+        self.present(displayAlertController, animated: true, completion: nil)
+    }
+    @IBAction func signUpClicked(_ sender: Any) {
+        print("Sign Up clicked")
+        
+        if email.text == "" || password.text == "" || telephoneNo.text == ""
+        {
+            displayAlert(title: "Information missing", message: "Please enter all information to sing up")
+            
+        }else{
+            
+            if let email = email.text{
+                if let password = password.text{
+                    if let telephone = telephoneNo.text{
+                        Auth.auth().createUser(withEmail: email, password: password) { (user, error) in
+                            
+                            if error != nil{
+                                self.displayAlert(title: "Error", message: error!.localizedDescription)
+                            }else{
+                                print("Sign Up successful")
+                                if self.mainSwitch.isOn{
+                                    let req = Auth.auth().currentUser?.createProfileChangeRequest()
+                                    req?.displayName = "User"
+                                    req?.commitChanges(completion: nil)
+                                    print("commited change")
+                                    self.performSegue(withIdentifier: "signUpToSignIn", sender: nil)
+                                }else{
+                                //MAJSTOR
+                                }
+                            }
+                            
+                        }
+                        
+                    }
+                }
+            }
+            
+            
+            
+            
+        }
+        
+        
+        
     }
 }

@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import FirebaseAuth
 
 class SignInViewController: UIViewController {
 
@@ -31,5 +32,25 @@ class SignInViewController: UIViewController {
     */
 
     @IBAction func signInClicked(_ sender: Any) {
+        if let email = email.text{
+            if let password = password.text{
+                Auth.auth().signIn(withEmail: email, password: password, completion: { (user, error) in
+                    if error != nil
+                    {
+                        //self.displayAlert(title: "Error", message: error!.localizedDescription)
+                        print("greska")
+                    }else{
+                        print("Log In successful")
+                        if user?.user.displayName == "User"{
+                            self.performSegue(withIdentifier: "toUser", sender: nil)
+                        }else{
+                            self.performSegue(withIdentifier: "toWorker", sender: nil)
+                            
+                        }
+                    }
+                })
+            }
+        }
+        
     }
 }
