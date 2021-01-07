@@ -29,6 +29,13 @@ class SignUpViewController: UIViewController {
     @IBOutlet weak var electricianSwitch: UISwitch!
     
     @IBOutlet weak var itWorkerSwitch: UISwitch!
+    
+    
+    let names : [String] = ["Gligor Ivanov" , "Petar Dautovski" , "Dragan Naumov", "Vanja Atanasoski" , "Sara Popovska", "Ana Dojcinovska"]
+    
+    
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -114,14 +121,38 @@ class SignUpViewController: UIViewController {
                                 self.displayAlert(title: "Error", message: error!.localizedDescription)
                             }else{
                                 print("Sign Up successful")
+                                let number = Int.random(in: 0..<5)
+                                let name = self.names[number]
                                 if self.mainSwitch.isOn{
                                     let req = Auth.auth().currentUser?.createProfileChangeRequest()
                                     req?.displayName = "User"
                                     req?.commitChanges(completion: nil)
+
+                                    let database = Database.database().reference()
+                                    
+                                    let user1 : [String : Any] = ["name": name as NSObject, "type":"user", "email": email, "password":password, "telephone":telephone,"typeWorker":""]
+                                    database.child("Users").childByAutoId().setValue(user1)
                                     print("commited change")
                                     self.performSegue(withIdentifier: "signUpToSignIn", sender: nil)
                                 }else{
-                                //MAJSTOR
+                                    var typeCraftsman : String
+                                    let req = Auth.auth().currentUser?.createProfileChangeRequest()
+                                    req?.displayName = "Worker"
+                                    req?.commitChanges(completion: nil)
+                                    if self.mechanicSwitch.isOn{
+                                        typeCraftsman = "mechanic"
+                                    }else if self.electricianSwitch.isOn{
+                                        typeCraftsman = "electrician"
+                                    }else
+                                    {
+                                        typeCraftsman = "itWorker"
+                                    }
+                                    print(typeCraftsman)
+                                    let database = Database.database().reference()
+                                    let user2 : [String : Any] = ["name": name as NSObject, "type":"worker", "email": email, "password":password, "telephone":telephone, "typeWorker": typeCraftsman]
+                                    database.child("Users").childByAutoId().setValue(user2)
+                                    self.performSegue(withIdentifier: "signUpToSignIn", sender: nil)
+                                    
                                 }
                             }
                             

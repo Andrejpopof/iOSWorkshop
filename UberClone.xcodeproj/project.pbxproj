@@ -12,7 +12,9 @@
 		77011346259B980B00B0E34B /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77011345259B980B00B0E34B /* SignInViewController.swift */; };
 		77930A2D259A324B002E2F16 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 77930A2C259A324A002E2F16 /* GoogleService-Info.plist */; };
 		77930A2F259A3562002E2F16 /* CustomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77930A2E259A3562002E2F16 /* CustomButton.swift */; };
+		779DFFA925A72E1F00CB9B6B /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 779DFFA825A72E1F00CB9B6B /* CoreLocation.framework */; };
 		77B0C8A425A10D0F0061A79E /* WorkersListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77B0C8A325A10D0F0061A79E /* WorkersListTableViewController.swift */; };
+		77B0C8A625A10F6C0061A79E /* WorkerListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77B0C8A525A10F6C0061A79E /* WorkerListTableViewCell.swift */; };
 		77ED55B8259CA830009F6F52 /* UserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77ED55B7259CA830009F6F52 /* UserViewController.swift */; };
 		77ED55BA259CB087009F6F52 /* WorkerTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77ED55B9259CB087009F6F52 /* WorkerTableViewController.swift */; };
 		D1BBD0032559F2E500D04A96 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1BBD0022559F2E500D04A96 /* AppDelegate.swift */; };
@@ -28,7 +30,9 @@
 		77011345259B980B00B0E34B /* SignInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
 		77930A2C259A324A002E2F16 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		77930A2E259A3562002E2F16 /* CustomButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomButton.swift; sourceTree = "<group>"; };
+		779DFFA825A72E1F00CB9B6B /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		77B0C8A325A10D0F0061A79E /* WorkersListTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkersListTableViewController.swift; sourceTree = "<group>"; };
+		77B0C8A525A10F6C0061A79E /* WorkerListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkerListTableViewCell.swift; sourceTree = "<group>"; };
 		77ED55B7259CA830009F6F52 /* UserViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserViewController.swift; sourceTree = "<group>"; };
 		77ED55B9259CB087009F6F52 /* WorkerTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkerTableViewController.swift; sourceTree = "<group>"; };
 		D1BBCFFF2559F2E500D04A96 /* UberClone.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = UberClone.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -47,6 +51,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				779DFFA925A72E1F00CB9B6B /* CoreLocation.framework in Frameworks */,
 				4756E92FA1AA2C441F9209CE /* Pods_UberClone.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -88,6 +93,7 @@
 				D1BBD0042559F2E500D04A96 /* ViewController.swift */,
 				77011343259B7E2000B0E34B /* SignUpViewController.swift */,
 				D1BBD0062559F2E500D04A96 /* Main.storyboard */,
+				77B0C8A525A10F6C0061A79E /* WorkerListTableViewCell.swift */,
 				77B0C8A325A10D0F0061A79E /* WorkersListTableViewController.swift */,
 				D1BBD0092559F2E600D04A96 /* Assets.xcassets */,
 				D1BBD00B2559F2E600D04A96 /* LaunchScreen.storyboard */,
@@ -104,6 +110,7 @@
 		EBA25365A4F1A1D32D0BD277 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				779DFFA825A72E1F00CB9B6B /* CoreLocation.framework */,
 				FA28E155D6CC1283C5C7CED3 /* Pods_UberClone.framework */,
 			);
 			name = Frameworks;
@@ -226,6 +233,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D1BBD0052559F2E500D04A96 /* ViewController.swift in Sources */,
+				77B0C8A625A10F6C0061A79E /* WorkerListTableViewCell.swift in Sources */,
 				77ED55B8259CA830009F6F52 /* UserViewController.swift in Sources */,
 				D1BBD0032559F2E500D04A96 /* AppDelegate.swift in Sources */,
 				77ED55BA259CB087009F6F52 /* WorkerTableViewController.swift in Sources */,

@@ -23,6 +23,10 @@ class UserViewController: UIViewController, CLLocationManagerDelegate {
     var workerLocation = CLLocationCoordinate2D()
     var workerCalled = false
     var workerOnTheWay = false
+    var typeWorkerNeeded : String = ""
+    var problemComment : String = ""
+    var problemLongit : Double?
+    var problemLatit : Double?
     
     
     override func viewDidLoad() {
@@ -37,6 +41,8 @@ class UserViewController: UIViewController, CLLocationManagerDelegate {
         locationManager.requestWhenInUseAuthorization()
         locationManager.startUpdatingLocation()
         
+        var user = Auth.auth().currentUser
+        
         
         
         if let email = Auth.auth().currentUser?.email{
@@ -47,17 +53,44 @@ class UserViewController: UIViewController, CLLocationManagerDelegate {
         
     }
     
+    
+    
+    
+    
     @objc func longPress(gestureRecognizer: UILongPressGestureRecognizer){
         if gestureRecognizer.state == UILongPressGestureRecognizer.State.began{
             print("long press")
             let touchPoint = gestureRecognizer.location(in: self.map)
             let newCoordinate = self.map.convert(touchPoint, toCoordinateFrom: self.map)
-            let newLocation = CLLocationCoordinate2D(latitude: newCoordinate.latitude, longitude: newCoordinate.longitude)
+            let newLocation = CLLocation(latitude: newCoordinate.latitude, longitude: newCoordinate.longitude)
             print(newLocation)
-            let ann = MKPointAnnotation()
-            ann.coordinate = newCoordinate
-            ann.title = "Added location on \(NSDate())"
-            self.map.addAnnotation(ann)
+            problemLatit = newCoordinate.latitude
+            problemLongit = newCoordinate.longitude
+            let annotation = MKPointAnnotation()
+            annotation.coordinate = newCoordinate
+            var title = ""
+            CLGeocoder().reverseGeocodeLocation(newLocation, completionHandler: { (placemarks, error) in
+                if error  != nil{
+                    print(error!)
+                }else{
+                    if let placemark = placemarks?[0]{
+                        if placemark.subThoroughfare !=  nil{
+                            title += placemark.subThoroughfare! + " "
+                        }
+                        if placemark.thoroughfare != nil{
+                            title += placemark.thoroughfare! + " "
+                        }
+                    }
+                    if title == ""{
+                        title = "Added location on \(NSDate())"
+                        }
+                    
+                    let ann = MKPointAnnotation()
+                    ann.coordinate = newCoordinate
+                    ann.title = title
+                    self.map.addAnnotation(ann)
+                }
+            })
             
         }
     }
@@ -114,9 +147,41 @@ class UserViewController: UIViewController, CLLocationManagerDelegate {
         navigationController?.dismiss(animated: true, completion: nil)
         
     }
-    
-    @IBAction func viewAllWorkersClicked(_ sender: Any) {
+    func displayAlert(title:String, message:String)
+    {
+        let displayAlertController = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        displayAlertController.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+        self.present(displayAlertController, animated: true, completion: nil)
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "toWorkers"{
+            let destinationController = segue.destination as! WorkersListTableViewController
+            if mechanicSwitch.isOn{
+                destinationController.selectedTypeWorker = "mechanic"
+                
+            }else if electricianSwitch.isOn{
+                destinationController.selectedTypeWorker = "electrician"
+            }else if itWorkerSwitch.isOn{
+                destinationController.selectedTypeWorker = "itWorker"
+            }
+            if let comment = commentField?.text{
+                destinationController.commentForProblem = comment
+            }
+            destinationController.problemLat = problemLatit
+            destinationController.problemLon = problemLongit
+            
+            
+            
+            
+        }
+    }
+    
+
+    
+
+
+    
    
+
 }

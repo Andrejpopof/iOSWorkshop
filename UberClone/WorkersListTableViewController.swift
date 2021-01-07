@@ -7,24 +7,46 @@
 //
 
 import UIKit
+import FirebaseAuth
+import FirebaseDatabase
 
 class WorkersListTableViewController: UITableViewController {
+    var selectedTypeWorker : String = ""
+    var commentForProblem : String = ""
+    var problemLat : Double?
+    var problemLon : Double?
+    
+    
 
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem
+        print(selectedTypeWorker)
+        print(commentForProblem)
+        print(problemLat!)
+        print(problemLon!)
+        let reference = Database.database().reference().child("Users").queryOrdered(byChild: "typeWorker")
+        reference.queryEqual(toValue: selectedTypeWorker).observe(.childAdded, with:{ (snapshot) in
+            let dictionary = snapshot.value as! [String : Any]
+            print(dictionary)
+            
+        })
+       
+        
+        
+        
+       
     }
+    
+    
+    
 
     // MARK: - Table view data source
 
     override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
-        return 0
+        return 1
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
