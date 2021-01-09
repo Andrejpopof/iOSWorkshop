@@ -9,12 +9,15 @@
 import UIKit
 import FirebaseAuth
 import FirebaseDatabase
+import MapKit
+
 
 class WorkersListTableViewController: UITableViewController {
     var selectedTypeWorker : String = ""
     var commentForProblem : String = ""
     var problemLat : Double?
     var problemLon : Double?
+    var workers : [DataSnapshot] = []
     
     
 
@@ -28,8 +31,12 @@ class WorkersListTableViewController: UITableViewController {
         print(problemLon!)
         let reference = Database.database().reference().child("Users").queryOrdered(byChild: "typeWorker")
         reference.queryEqual(toValue: selectedTypeWorker).observe(.childAdded, with:{ (snapshot) in
-            let dictionary = snapshot.value as! [String : Any]
-            print(dictionary)
+            if let dictionary = snapshot.value as? [String : Any]{
+                print(dictionary)
+                self.workers.append(snapshot)
+                self.tableView.reloadData()
+            }
+            
             
         })
        
@@ -51,18 +58,41 @@ class WorkersListTableViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 0
+        return workers.count
     }
 
-    /*
+    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! WorkerListTableViewCell
+        
+        let snapshot = workers[indexPath.row]
+        if let dict  = snapshot.value as? [String:AnyObject]{
+            if let name = dict["name"] as? String{
+                if let latWorker = dict["latitude"] as? Double{
+                    if let lonWorker = dict["longitude"] as? Double{
+                        let problemLocation = CLLocation(latitude: self.problemLat!, longitude: self.problemLon!)
+                        let workerLocation = CLLocation(latitude: latWorker, longitude: lonWorker)
+                        let distance = workerLocation.distance(from: problemLocation) / 1000
+                        let roundedDistance = round(distance*100)/100
+                        cell.craftsmanName.text = name
+                        cell.distance.text = String(roundedDistance) + " km away"
+                    }
+                }
+            }
+        }
+            
+        
 
         // Configure the cell...
 
         return cell
     }
-    */
+ 
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let snapshot = workers[indexPath.row]
+        performSegue(withIdentifier: "toRequest", sender: snapshot)
+    }
 
     /*
     // Override to support conditional editing of the table view.

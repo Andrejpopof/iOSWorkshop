@@ -9,7 +9,10 @@
 import UIKit
 
 class WorkerListTableViewCell: UITableViewCell {
-
+    @IBOutlet weak var craftsmanName: UILabel!
+    
+    @IBOutlet weak var distance: UILabel!
+    @IBOutlet weak var imageCheckMark: UIImageView!
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

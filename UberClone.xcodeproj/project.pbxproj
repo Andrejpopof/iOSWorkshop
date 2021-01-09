@@ -15,6 +15,7 @@
 		779DFFA925A72E1F00CB9B6B /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 779DFFA825A72E1F00CB9B6B /* CoreLocation.framework */; };
 		77B0C8A425A10D0F0061A79E /* WorkersListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77B0C8A325A10D0F0061A79E /* WorkersListTableViewController.swift */; };
 		77B0C8A625A10F6C0061A79E /* WorkerListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77B0C8A525A10F6C0061A79E /* WorkerListTableViewCell.swift */; };
+		77B950F325A89C0700220F03 /* RequestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77B950F225A89C0700220F03 /* RequestViewController.swift */; };
 		77ED55B8259CA830009F6F52 /* UserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77ED55B7259CA830009F6F52 /* UserViewController.swift */; };
 		77ED55BA259CB087009F6F52 /* WorkerTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77ED55B9259CB087009F6F52 /* WorkerTableViewController.swift */; };
 		D1BBD0032559F2E500D04A96 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1BBD0022559F2E500D04A96 /* AppDelegate.swift */; };
@@ -33,6 +34,7 @@
 		779DFFA825A72E1F00CB9B6B /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		77B0C8A325A10D0F0061A79E /* WorkersListTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkersListTableViewController.swift; sourceTree = "<group>"; };
 		77B0C8A525A10F6C0061A79E /* WorkerListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkerListTableViewCell.swift; sourceTree = "<group>"; };
+		77B950F225A89C0700220F03 /* RequestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestViewController.swift; sourceTree = "<group>"; };
 		77ED55B7259CA830009F6F52 /* UserViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserViewController.swift; sourceTree = "<group>"; };
 		77ED55B9259CB087009F6F52 /* WorkerTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkerTableViewController.swift; sourceTree = "<group>"; };
 		D1BBCFFF2559F2E500D04A96 /* UberClone.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = UberClone.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -93,6 +95,7 @@
 				D1BBD0042559F2E500D04A96 /* ViewController.swift */,
 				77011343259B7E2000B0E34B /* SignUpViewController.swift */,
 				D1BBD0062559F2E500D04A96 /* Main.storyboard */,
+				77B950F225A89C0700220F03 /* RequestViewController.swift */,
 				77B0C8A525A10F6C0061A79E /* WorkerListTableViewCell.swift */,
 				77B0C8A325A10D0F0061A79E /* WorkersListTableViewController.swift */,
 				D1BBD0092559F2E600D04A96 /* Assets.xcassets */,
@@ -234,6 +237,7 @@
 			files = (
 				D1BBD0052559F2E500D04A96 /* ViewController.swift in Sources */,
 				77B0C8A625A10F6C0061A79E /* WorkerListTableViewCell.swift in Sources */,
+				77B950F325A89C0700220F03 /* RequestViewController.swift in Sources */,
 				77ED55B8259CA830009F6F52 /* UserViewController.swift in Sources */,
 				D1BBD0032559F2E500D04A96 /* AppDelegate.swift in Sources */,
 				77ED55BA259CB087009F6F52 /* WorkerTableViewController.swift in Sources */,
