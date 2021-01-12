@@ -70,15 +70,27 @@ class RequestsTableViewController: UITableViewController {
                                                 if let telephoneWorker = req["telephoneWorker"] as? String{
                                                     if let emailWorker = req["emailWorker"] as? String{
                                                         if let description = req["description"] as? String{
+                                                            if let datumPonuden = req["datumPonuden"] as? String{
+                                                                if let cenaPonuda = req["cenaPonuda"] as? String{
+                                                                    if let datumFinish = req["dateFinish"] as? String{
+                                                                        reqDetailVC.dateRequest = dateReq
+                                                                        reqDetailVC.statusReq = status
+                                                                        reqDetailVC.typeCraftsman = typeWorker
+                                                                        reqDetailVC.nameCraftsman = nameWorker
+                                                                        reqDetailVC.telephoneCraftsman = telephoneWorker
+                                                                        reqDetailVC.emaillCraftsman = emailWorker
+                                                                        reqDetailVC.opis = description
+                                                                        reqDetailVC.ponudenaCena = cenaPonuda
+                                                                        reqDetailVC.ponudenaData = datumPonuden
+                                                                        reqDetailVC.rabotaZavrsenaData = datumFinish
+                                                                    }
+                                                                    
+                                                                    
+                                                                }
+                                                            }
                                                                 
                                                                     
-                                                                    reqDetailVC.dateRequest = dateReq
-                                                                    reqDetailVC.statusReq = status
-                                                                    reqDetailVC.typeCraftsman = typeWorker
-                                                                    reqDetailVC.nameCraftsman = nameWorker
-                                                                    reqDetailVC.telephoneCraftsman = telephoneWorker
-                                                                    reqDetailVC.emaillCraftsman = emailWorker
-                                                                    reqDetailVC.opis = description
+                                                            
                                                                     
                                                                     
                                                                     

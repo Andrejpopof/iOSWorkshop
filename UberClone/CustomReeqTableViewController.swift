@@ -29,6 +29,8 @@ class CustomReeqTableViewController: UITableViewController {
     var telephoneUser = String()
     var emailUser = String()
     var keyForUpdate = String()
+    var problemLatitude = Double()
+    var problemLongitude = Double()
     
     @IBOutlet weak var sendButton: UIBarButtonItem!
     
@@ -156,7 +158,7 @@ class CustomReeqTableViewController: UITableViewController {
         
         
         
-        let requestDictionary : [String:Any] = ["date" : dateTimeString , "nameWorker": self.name, "typeWorker": self.typeWorker, "emailWorker": self.email , "telephoneWorker": self.telephone , "nameUser": self.nameUser , "emailUser": self.emailUser, "telephoneUser": self.telephoneUser , "description": self.commentForProblem, "longitude": self.longitude, "latitude": self.latitude, "status": "active","cenaPonuda":"","datumPonuden":"","slikaPonudena":""]
+        let requestDictionary : [String:Any] = ["date" : dateTimeString , "nameWorker": self.name, "typeWorker": self.typeWorker, "emailWorker": self.email , "telephoneWorker": self.telephone , "nameUser": self.nameUser , "emailUser": self.emailUser, "telephoneUser": self.telephoneUser , "description": self.commentForProblem, "longitude": self.longitude, "latitude": self.latitude, "status": "active","cenaPonuda":"","datumPonuden":"","slikaPonudena":"","dateFinish":"","problemLatitude":problemLatitude,"problemLongitude":problemLongitude]
         Database.database().reference().child("Requests").childByAutoId().setValue(requestDictionary)
         
 //        Database.database().reference().child("Users").queryOrdered(byChild: "email").queryEqual(toValue: self.emailUser).observe(.value, with: { (snapshot) in

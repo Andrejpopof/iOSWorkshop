@@ -52,11 +52,12 @@ class ForWorkerTableViewController: UITableViewController {
                     if let nameUser = workers["nameUser"] as? String{
                         if let emailUser = workers["emailUser"] as? String{
                             if let date = workers["date"] as? String{
-                                if let lat = workers["latitude"] as? Double{
-                                    if let lon = workers["longitude"] as? Double{
+                                if let lat = workers["problemLatitude"] as? Double{
+                                    if let lon = workers["problemLongitude"] as? Double{
                                         if let opis = workers["description"] as? String{
                                             if let telephoneUser = workers["telephoneUser"] as? String{
                                                 if let status = workers["status"] as? String {
+                                                    
                                                     
                                                     
                                                     acceptVC.problemDate = date

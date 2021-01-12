@@ -1608,7 +1608,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="44X-S5-7ki">
-                                <rect key="frame" x="0.0" y="64" width="375" height="936"/>
+                                <rect key="frame" x="0.0" y="20" width="375" height="980"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="whK-zk-nx5">
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="1000"/>
@@ -1871,7 +1871,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LNd-ii-t8e">
-                                <rect key="frame" x="0.0" y="64" width="375" height="736"/>
+                                <rect key="frame" x="0.0" y="20" width="375" height="780"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BFh-yo-8nf">
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="800"/>
@@ -2090,6 +2090,7 @@
                         <outlet property="nameLabel" destination="dxh-ub-rd8" id="PiD-ji-hSe"/>
                         <outlet property="statusLabel" destination="QfR-xI-eUq" id="BRg-Ky-wTZ"/>
                         <outlet property="telephoneNoLabel" destination="pji-gF-yvt" id="qXV-hc-73e"/>
+                        <segue destination="VmQ-PI-iUv" kind="show" identifier="backToMainWorker" id="Sbr-Kj-Rt7"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7Eo-vE-oYi" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -2102,6 +2103,7 @@
         <image name="logo" width="1149" height="864"/>
     </resources>
     <inferredMetricsTieBreakers>
+        <segue reference="Sbr-Kj-Rt7"/>
         <segue reference="dg2-73-5Gv"/>
         <segue reference="ll7-TO-nkt"/>
         <segue reference="ZKr-aE-sNO"/>

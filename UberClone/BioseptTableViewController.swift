@@ -65,14 +65,27 @@ class BioseptTableViewController: UITableViewController {
                                             if let telephoneUser = workers["telephoneUser"] as? String{
                                                 if let status = workers["status"] as? String {
                                                     if let priceOffered = workers["cenaPonuda"] as? String{
-                                                        acceptVC.dateOffered = date
-                                                        acceptVC.nameUser = nameUser
-                                                        acceptVC.emailUser = emailUser
-                                                        acceptVC.latitude = lat
-                                                        acceptVC.longitude = lon
-                                                        acceptVC.telephoneUser = telephoneUser
-                                                        acceptVC.statusProblem = status
-                                                        acceptVC.priceOffered = priceOffered
+                                                        if let desc = workers["description"] as? String{
+                                                            if let longProblem = workers["problemLongitude"] as? Double{
+                                                                if let latProblem = workers["problemLatitude"] as? Double{
+                                                                    acceptVC.dateOffered = date
+                                                                    acceptVC.nameUser = nameUser
+                                                                    acceptVC.emailUser = emailUser
+                                                                    acceptVC.latitude = lat
+                                                                    acceptVC.longitude = lon
+                                                                    acceptVC.telephoneUser = telephoneUser
+                                                                    acceptVC.statusProblem = status
+                                                                    acceptVC.priceOffered = priceOffered
+                                                                    acceptVC.opis = desc
+                                                                    acceptVC.latitudeProblem = latProblem
+                                                                    acceptVC.longitudeProblem = longProblem
+                                                                }
+                                                            }
+                                                            
+                                                            
+                                                            
+                                                        }
+                                                    
                                                     }
                                                     
                                                 }

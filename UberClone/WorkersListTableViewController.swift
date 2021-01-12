@@ -15,8 +15,8 @@ import MapKit
 class WorkersListTableViewController: UITableViewController {
     var selectedTypeWorker : String = ""
     var commentForProblem : String = ""
-    var problemLat : Double?
-    var problemLon : Double?
+    var problemLat = Double()
+    var problemLon = Double()
     var workers : [DataSnapshot] = []
     var requests : [DataSnapshot] = []
     
@@ -26,10 +26,10 @@ class WorkersListTableViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        print(selectedTypeWorker)
-        print(commentForProblem)
-        print(problemLat!)
-        print(problemLon!)
+//        print(selectedTypeWorker)
+//        print(commentForProblem)
+//        print(problemLat!)
+//        print(problemLon!)
         let reference = Database.database().reference().child("Users").queryOrdered(byChild: "typeWorker")
         reference.queryEqual(toValue: selectedTypeWorker).observe(.childAdded, with:{ (snapshot) in
             if let dictionary = snapshot.value as? [String : Any]{
@@ -82,7 +82,7 @@ class WorkersListTableViewController: UITableViewController {
                             })
                             
                         }
-                        let problemLocation = CLLocation(latitude: self.problemLat!, longitude: self.problemLon!)
+                        let problemLocation = CLLocation(latitude: self.problemLat, longitude: self.problemLon)
                         let workerLocation = CLLocation(latitude: latWorker, longitude: lonWorker)
                         let distance = workerLocation.distance(from: problemLocation) / 1000
                         let roundedDistance = round(distance*100)/100
@@ -132,6 +132,8 @@ class WorkersListTableViewController: UITableViewController {
                                                     acceptVC.email = email
                                                     acceptVC.telephone = telephone
                                                     acceptVC.commentForProblem = commentForProblem
+                                                    acceptVC.problemLatitude = problemLat
+                                                    acceptVC.problemLongitude = problemLon
                                                 
                                                 
                                                 

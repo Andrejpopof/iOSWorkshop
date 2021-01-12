@@ -65,6 +65,14 @@ class ActiveReqDetaisWorkerViewController: UIViewController, MKMapViewDelegate {
         displayAlertController.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
         self.present(displayAlertController, animated: true, completion: nil)
     }
+    func displayAlert1(title:String, message:String)
+    {
+        let displayAlertController = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        displayAlertController.addAction(UIAlertAction(title: "OK", style: .default, handler: { action in
+            self.performSegue(withIdentifier: "backToUser", sender: nil)
+        }))
+        self.present(displayAlertController, animated: true, completion: nil)
+    }
     
     @IBAction func sendOfferClicked(_ sender: Any) {
         
@@ -99,7 +107,15 @@ class ActiveReqDetaisWorkerViewController: UIViewController, MKMapViewDelegate {
         
         
     }
+    
+  
     @IBAction func declineRequestClicked(_ sender: Any) {
+        Database.database().reference().child("Requests").queryOrdered(byChild: "description").queryEqual(toValue: desc).observe(.childAdded,with: { (snapshot) in
+            snapshot.ref.removeValue()
+            Database.database().reference().child("Requests").removeAllObservers()
+        })
+        
+        displayAlert1(title: "You have declind the request", message: "Thank you for your support")
     }
     
     /*

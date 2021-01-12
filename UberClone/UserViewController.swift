@@ -25,8 +25,8 @@ class UserViewController: UIViewController, CLLocationManagerDelegate {
     var workerOnTheWay = false
     var typeWorkerNeeded : String = ""
     var problemComment : String = ""
-    var problemLongit : Double?
-    var problemLatit : Double?
+    var problemLongit = Double()
+    var problemLatit = Double()
     
     
     override func viewDidLoad() {

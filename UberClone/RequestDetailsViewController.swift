@@ -98,7 +98,7 @@ class RequestDetailsViewController: UIViewController {
             datumZakazanaRabota.isHidden = true
             cancelReqBtn.isEnabled = false
             cancelReqBtn.isHidden = true
-            
+            dataZavrsenaRabota.text = rabotaZavrsenaData
         }else if statusReq == "dobienaPonuda"{
             dateForJobLabel.isHidden = true
             datumZakazanaRabota.isHidden = true
@@ -108,6 +108,8 @@ class RequestDetailsViewController: UIViewController {
             slikaZavrsenaRabota.isHidden = true
             dataZavrsenaRabotaLabel.isHidden = true
             dataZavrsenaRabota.isHidden = true
+            cenaOfferLabel.text = ponudenaCena
+            datumOfferLabel.text = ponudenaData
             
         }else if statusReq == "zakazano"{
             cancelReqBtn.isEnabled = false
@@ -155,8 +157,7 @@ class RequestDetailsViewController: UIViewController {
         
     }
     @IBAction func acceptClicked(_ sender: Any) {
-        cenaOfferLabel.text = ponudenaCena
-        datumOfferLabel.text = ponudenaData
+        
         
         let ref  = Database.database().reference().child("Requests").queryOrdered(byChild: "description").queryEqual(toValue: opis).observe(.value,with: { (snapshot) in
             if let snap = snapshot.value as? [String:Any]{
@@ -167,6 +168,8 @@ class RequestDetailsViewController: UIViewController {
         })
         let childUpdates = ["/Requests/\(Key)/status":"zakazano"]
         db.updateChildValues(childUpdates)
+        
+        
         
         
         
