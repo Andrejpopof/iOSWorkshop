@@ -10,14 +10,23 @@
 		4756E92FA1AA2C441F9209CE /* Pods_UberClone.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA28E155D6CC1283C5C7CED3 /* Pods_UberClone.framework */; };
 		77011344259B7E2000B0E34B /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77011343259B7E2000B0E34B /* SignUpViewController.swift */; };
 		77011346259B980B00B0E34B /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77011345259B980B00B0E34B /* SignInViewController.swift */; };
+		770E55EC25AA236C00CC5535 /* CustomCellReqTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 770E55EB25AA236C00CC5535 /* CustomCellReqTableViewCell.swift */; };
+		770E55F025AA25C600CC5535 /* CustomReeqTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 770E55EF25AA25C600CC5535 /* CustomReeqTableViewController.swift */; };
+		7711D01325ADED4200FF921C /* ForWorkerTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7711D01225ADED4200FF921C /* ForWorkerTableViewController.swift */; };
+		7711D01525ADED6700FF921C /* ForWorkerTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7711D01425ADED6700FF921C /* ForWorkerTableViewCell.swift */; };
+		7711D01725ADF8F000FF921C /* ActiveReqDetaisWorkerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7711D01625ADF8F000FF921C /* ActiveReqDetaisWorkerViewController.swift */; };
+		7711D02325AE1AFA00FF921C /* BioseptTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7711D02225AE1AFA00FF921C /* BioseptTableViewController.swift */; };
+		7711D02525AE1B0F00FF921C /* BioseptTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7711D02425AE1B0F00FF921C /* BioseptTableViewCell.swift */; };
+		7711D02725AE200A00FF921C /* DetaloBioseptViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7711D02625AE200A00FF921C /* DetaloBioseptViewController.swift */; };
+		7790D75E25ACB30200D95440 /* RequestsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7790D75D25ACB30200D95440 /* RequestsTableViewCell.swift */; };
+		7790D76025ACB3A400D95440 /* RequestsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7790D75F25ACB3A400D95440 /* RequestsTableViewController.swift */; };
+		7790D76225ACD01C00D95440 /* RequestDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7790D76125ACD01C00D95440 /* RequestDetailsViewController.swift */; };
 		77930A2D259A324B002E2F16 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 77930A2C259A324A002E2F16 /* GoogleService-Info.plist */; };
 		77930A2F259A3562002E2F16 /* CustomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77930A2E259A3562002E2F16 /* CustomButton.swift */; };
 		779DFFA925A72E1F00CB9B6B /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 779DFFA825A72E1F00CB9B6B /* CoreLocation.framework */; };
 		77B0C8A425A10D0F0061A79E /* WorkersListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77B0C8A325A10D0F0061A79E /* WorkersListTableViewController.swift */; };
 		77B0C8A625A10F6C0061A79E /* WorkerListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77B0C8A525A10F6C0061A79E /* WorkerListTableViewCell.swift */; };
-		77B950F325A89C0700220F03 /* RequestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77B950F225A89C0700220F03 /* RequestViewController.swift */; };
 		77ED55B8259CA830009F6F52 /* UserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77ED55B7259CA830009F6F52 /* UserViewController.swift */; };
-		77ED55BA259CB087009F6F52 /* WorkerTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77ED55B9259CB087009F6F52 /* WorkerTableViewController.swift */; };
 		D1BBD0032559F2E500D04A96 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1BBD0022559F2E500D04A96 /* AppDelegate.swift */; };
 		D1BBD0052559F2E500D04A96 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1BBD0042559F2E500D04A96 /* ViewController.swift */; };
 		D1BBD0082559F2E500D04A96 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D1BBD0062559F2E500D04A96 /* Main.storyboard */; };
@@ -29,14 +38,23 @@
 		5B977D9A0A7FD4F1A8F7038F /* Pods-UberClone.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UberClone.debug.xcconfig"; path = "Target Support Files/Pods-UberClone/Pods-UberClone.debug.xcconfig"; sourceTree = "<group>"; };
 		77011343259B7E2000B0E34B /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SignUpViewController.swift; path = /Users/andrej/Desktop/workshop/UberClone/UberClone/SignUpViewController.swift; sourceTree = "<absolute>"; };
 		77011345259B980B00B0E34B /* SignInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
+		770E55EB25AA236C00CC5535 /* CustomCellReqTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomCellReqTableViewCell.swift; sourceTree = "<group>"; };
+		770E55EF25AA25C600CC5535 /* CustomReeqTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomReeqTableViewController.swift; sourceTree = "<group>"; };
+		7711D01225ADED4200FF921C /* ForWorkerTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForWorkerTableViewController.swift; sourceTree = "<group>"; };
+		7711D01425ADED6700FF921C /* ForWorkerTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForWorkerTableViewCell.swift; sourceTree = "<group>"; };
+		7711D01625ADF8F000FF921C /* ActiveReqDetaisWorkerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActiveReqDetaisWorkerViewController.swift; sourceTree = "<group>"; };
+		7711D02225AE1AFA00FF921C /* BioseptTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BioseptTableViewController.swift; sourceTree = "<group>"; };
+		7711D02425AE1B0F00FF921C /* BioseptTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BioseptTableViewCell.swift; sourceTree = "<group>"; };
+		7711D02625AE200A00FF921C /* DetaloBioseptViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetaloBioseptViewController.swift; sourceTree = "<group>"; };
+		7790D75D25ACB30200D95440 /* RequestsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestsTableViewCell.swift; sourceTree = "<group>"; };
+		7790D75F25ACB3A400D95440 /* RequestsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestsTableViewController.swift; sourceTree = "<group>"; };
+		7790D76125ACD01C00D95440 /* RequestDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestDetailsViewController.swift; sourceTree = "<group>"; };
 		77930A2C259A324A002E2F16 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		77930A2E259A3562002E2F16 /* CustomButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomButton.swift; sourceTree = "<group>"; };
 		779DFFA825A72E1F00CB9B6B /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		77B0C8A325A10D0F0061A79E /* WorkersListTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkersListTableViewController.swift; sourceTree = "<group>"; };
 		77B0C8A525A10F6C0061A79E /* WorkerListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkerListTableViewCell.swift; sourceTree = "<group>"; };
-		77B950F225A89C0700220F03 /* RequestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestViewController.swift; sourceTree = "<group>"; };
 		77ED55B7259CA830009F6F52 /* UserViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserViewController.swift; sourceTree = "<group>"; };
-		77ED55B9259CB087009F6F52 /* WorkerTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkerTableViewController.swift; sourceTree = "<group>"; };
 		D1BBCFFF2559F2E500D04A96 /* UberClone.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = UberClone.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D1BBD0022559F2E500D04A96 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D1BBD0042559F2E500D04A96 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -93,9 +111,11 @@
 			children = (
 				D1BBD0022559F2E500D04A96 /* AppDelegate.swift */,
 				D1BBD0042559F2E500D04A96 /* ViewController.swift */,
+				77011345259B980B00B0E34B /* SignInViewController.swift */,
 				77011343259B7E2000B0E34B /* SignUpViewController.swift */,
 				D1BBD0062559F2E500D04A96 /* Main.storyboard */,
-				77B950F225A89C0700220F03 /* RequestViewController.swift */,
+				770E55EF25AA25C600CC5535 /* CustomReeqTableViewController.swift */,
+				770E55EB25AA236C00CC5535 /* CustomCellReqTableViewCell.swift */,
 				77B0C8A525A10F6C0061A79E /* WorkerListTableViewCell.swift */,
 				77B0C8A325A10D0F0061A79E /* WorkersListTableViewController.swift */,
 				D1BBD0092559F2E600D04A96 /* Assets.xcassets */,
@@ -103,9 +123,16 @@
 				D1BBD00E2559F2E600D04A96 /* Info.plist */,
 				77930A2C259A324A002E2F16 /* GoogleService-Info.plist */,
 				77930A2E259A3562002E2F16 /* CustomButton.swift */,
-				77011345259B980B00B0E34B /* SignInViewController.swift */,
 				77ED55B7259CA830009F6F52 /* UserViewController.swift */,
-				77ED55B9259CB087009F6F52 /* WorkerTableViewController.swift */,
+				7790D75D25ACB30200D95440 /* RequestsTableViewCell.swift */,
+				7790D75F25ACB3A400D95440 /* RequestsTableViewController.swift */,
+				7790D76125ACD01C00D95440 /* RequestDetailsViewController.swift */,
+				7711D01225ADED4200FF921C /* ForWorkerTableViewController.swift */,
+				7711D01425ADED6700FF921C /* ForWorkerTableViewCell.swift */,
+				7711D01625ADF8F000FF921C /* ActiveReqDetaisWorkerViewController.swift */,
+				7711D02225AE1AFA00FF921C /* BioseptTableViewController.swift */,
+				7711D02425AE1B0F00FF921C /* BioseptTableViewCell.swift */,
+				7711D02625AE200A00FF921C /* DetaloBioseptViewController.swift */,
 			);
 			path = UberClone;
 			sourceTree = "<group>";
@@ -236,13 +263,22 @@
 			buildActionMask = 2147483647;
 			files = (
 				D1BBD0052559F2E500D04A96 /* ViewController.swift in Sources */,
+				7790D76225ACD01C00D95440 /* RequestDetailsViewController.swift in Sources */,
+				7711D01525ADED6700FF921C /* ForWorkerTableViewCell.swift in Sources */,
+				7790D75E25ACB30200D95440 /* RequestsTableViewCell.swift in Sources */,
 				77B0C8A625A10F6C0061A79E /* WorkerListTableViewCell.swift in Sources */,
-				77B950F325A89C0700220F03 /* RequestViewController.swift in Sources */,
 				77ED55B8259CA830009F6F52 /* UserViewController.swift in Sources */,
+				7711D01325ADED4200FF921C /* ForWorkerTableViewController.swift in Sources */,
 				D1BBD0032559F2E500D04A96 /* AppDelegate.swift in Sources */,
-				77ED55BA259CB087009F6F52 /* WorkerTableViewController.swift in Sources */,
 				77011344259B7E2000B0E34B /* SignUpViewController.swift in Sources */,
+				770E55F025AA25C600CC5535 /* CustomReeqTableViewController.swift in Sources */,
+				770E55EC25AA236C00CC5535 /* CustomCellReqTableViewCell.swift in Sources */,
+				7711D01725ADF8F000FF921C /* ActiveReqDetaisWorkerViewController.swift in Sources */,
+				7711D02525AE1B0F00FF921C /* BioseptTableViewCell.swift in Sources */,
+				7711D02325AE1AFA00FF921C /* BioseptTableViewController.swift in Sources */,
 				77011346259B980B00B0E34B /* SignInViewController.swift in Sources */,
+				7711D02725AE200A00FF921C /* DetaloBioseptViewController.swift in Sources */,
+				7790D76025ACB3A400D95440 /* RequestsTableViewController.swift in Sources */,
 				77930A2F259A3562002E2F16 /* CustomButton.swift in Sources */,
 				77B0C8A425A10D0F0061A79E /* WorkersListTableViewController.swift in Sources */,
 			);

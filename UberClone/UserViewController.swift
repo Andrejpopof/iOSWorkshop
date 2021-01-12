@@ -41,13 +41,7 @@ class UserViewController: UIViewController, CLLocationManagerDelegate {
         locationManager.requestWhenInUseAuthorization()
         locationManager.startUpdatingLocation()
         
-        var user = Auth.auth().currentUser
         
-        
-        
-        if let email = Auth.auth().currentUser?.email{
-            //ako ima viknato
-        }
         
         
         

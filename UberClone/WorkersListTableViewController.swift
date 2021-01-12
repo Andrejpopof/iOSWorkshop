@@ -18,6 +18,7 @@ class WorkersListTableViewController: UITableViewController {
     var problemLat : Double?
     var problemLon : Double?
     var workers : [DataSnapshot] = []
+    var requests : [DataSnapshot] = []
     
     
 
@@ -40,7 +41,6 @@ class WorkersListTableViewController: UITableViewController {
             
         })
        
-        
         
         
        
@@ -70,12 +70,27 @@ class WorkersListTableViewController: UITableViewController {
             if let name = dict["name"] as? String{
                 if let latWorker = dict["latitude"] as? Double{
                     if let lonWorker = dict["longitude"] as? Double{
+                        if let emailUser = Auth.auth().currentUser?.email{
+                            let ref = Database.database().reference().child("Requests").queryOrdered(byChild: "emailUser").queryEqual(toValue: emailUser).observe(.childAdded, with:  { (snapshot) in
+                                if let dict = snapshot.value as? [String:AnyObject]{
+                                    if dict["nameWorker"] as? String == name{
+                                        cell.accessoryType = UITableViewCell.AccessoryType.checkmark
+                                        //self.sendButton.isEnabled = false
+                                        //displayAlert(title: "Wait", message: "Plese wait for your request to be delivered")
+                                    }
+                                }
+                            })
+                            
+                        }
                         let problemLocation = CLLocation(latitude: self.problemLat!, longitude: self.problemLon!)
                         let workerLocation = CLLocation(latitude: latWorker, longitude: lonWorker)
                         let distance = workerLocation.distance(from: problemLocation) / 1000
                         let roundedDistance = round(distance*100)/100
                         cell.craftsmanName.text = name
                         cell.distance.text = String(roundedDistance) + " km away"
+                        
+                        
+                        
                     }
                 }
             }
@@ -90,8 +105,48 @@ class WorkersListTableViewController: UITableViewController {
  
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        
         let snapshot = workers[indexPath.row]
         performSegue(withIdentifier: "toRequest", sender: snapshot)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let acceptVC = segue.destination as? CustomReeqTableViewController{
+            if let snapshot = sender as? DataSnapshot{
+                if let workers = snapshot.value as? [String:AnyObject]{
+                    if let name = workers["name"] as? String{
+                        if let typeWorker = workers["typeWorker"] as? String{
+                            if let images = workers["images"] as? [String:String]{
+                                if let lat = workers["latitude"] as? Double{
+                                    if let lon = workers["longitude"] as? Double{
+                                        if let email = workers["email"] as? String{
+                                            if let telephone = workers["telephone"] as? String{
+                                                
+                                                    
+                                                    acceptVC.name = name
+                                                    acceptVC.typeWorker = typeWorker
+                                                    acceptVC.sliki = images
+                                                    acceptVC.latitude = lat
+                                                    acceptVC.longitude = lon
+                                                    acceptVC.email = email
+                                                    acceptVC.telephone = telephone
+                                                    acceptVC.commentForProblem = commentForProblem
+                                                
+                                                
+                                                
+                                                
+                                                
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
     }
 
     /*
