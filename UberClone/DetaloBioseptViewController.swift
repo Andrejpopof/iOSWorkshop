@@ -107,8 +107,19 @@ class DetaloBioseptViewController: UIViewController,MKMapViewDelegate {
     
     
     @IBAction func navigateToMapClicked(_ sender: Any) {
-        
+        performSegue(withIdentifier: "toMap", sender: nil)
        
+    }
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "toMap"{
+            if let controller = segue.destination as? MapViewController{
+                
+                var coordinates = CLLocationCoordinate2D(latitude: latitudeProblem, longitude: longitudeProblem)
+                
+                controller.location = coordinates
+                
+            }
+        }
     }
     
   

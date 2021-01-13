@@ -24,6 +24,7 @@
 		77930A2D259A324B002E2F16 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 77930A2C259A324A002E2F16 /* GoogleService-Info.plist */; };
 		77930A2F259A3562002E2F16 /* CustomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77930A2E259A3562002E2F16 /* CustomButton.swift */; };
 		779DFFA925A72E1F00CB9B6B /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 779DFFA825A72E1F00CB9B6B /* CoreLocation.framework */; };
+		77A0A02225AF0505001AAD29 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77A0A02125AF0505001AAD29 /* MapViewController.swift */; };
 		77B0C8A425A10D0F0061A79E /* WorkersListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77B0C8A325A10D0F0061A79E /* WorkersListTableViewController.swift */; };
 		77B0C8A625A10F6C0061A79E /* WorkerListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77B0C8A525A10F6C0061A79E /* WorkerListTableViewCell.swift */; };
 		77ED55B8259CA830009F6F52 /* UserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77ED55B7259CA830009F6F52 /* UserViewController.swift */; };
@@ -52,6 +53,7 @@
 		77930A2C259A324A002E2F16 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		77930A2E259A3562002E2F16 /* CustomButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomButton.swift; sourceTree = "<group>"; };
 		779DFFA825A72E1F00CB9B6B /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		77A0A02125AF0505001AAD29 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		77B0C8A325A10D0F0061A79E /* WorkersListTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkersListTableViewController.swift; sourceTree = "<group>"; };
 		77B0C8A525A10F6C0061A79E /* WorkerListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkerListTableViewCell.swift; sourceTree = "<group>"; };
 		77ED55B7259CA830009F6F52 /* UserViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserViewController.swift; sourceTree = "<group>"; };
@@ -133,6 +135,7 @@
 				7711D02225AE1AFA00FF921C /* BioseptTableViewController.swift */,
 				7711D02425AE1B0F00FF921C /* BioseptTableViewCell.swift */,
 				7711D02625AE200A00FF921C /* DetaloBioseptViewController.swift */,
+				77A0A02125AF0505001AAD29 /* MapViewController.swift */,
 			);
 			path = UberClone;
 			sourceTree = "<group>";
@@ -265,6 +268,7 @@
 				D1BBD0052559F2E500D04A96 /* ViewController.swift in Sources */,
 				7790D76225ACD01C00D95440 /* RequestDetailsViewController.swift in Sources */,
 				7711D01525ADED6700FF921C /* ForWorkerTableViewCell.swift in Sources */,
+				77A0A02225AF0505001AAD29 /* MapViewController.swift in Sources */,
 				7790D75E25ACB30200D95440 /* RequestsTableViewCell.swift in Sources */,
 				77B0C8A625A10F6C0061A79E /* WorkerListTableViewCell.swift in Sources */,
 				77ED55B8259CA830009F6F52 /* UserViewController.swift in Sources */,
